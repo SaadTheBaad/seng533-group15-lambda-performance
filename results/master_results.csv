@@ -1,2 +1,2 @@
-run_id,workload_type,arrival_rate_rps,memory_mb,reserved_concurrency,duration_minutes,requests_completed,avg_latency_ms,p95_latency_ms,max_latency_ms,error_rate_percent,lambda_invocations,lambda_avg_duration_ms,lambda_max_duration_ms,throttles,max_concurrency,cold_start_observed
-run1,sustained,5,128,none,10,3001,86.27,95.7,144.89,0,3016,47.92,196,0,1,yes
+run_id,repetition,workload_type,arrival_rate_rps,memory_mb,reserved_concurrency,duration_minutes,requests_completed,avg_latency_ms,p95_latency_ms,max_latency_ms,error_rate_percent,lambda_invocations,lambda_avg_duration_ms,lambda_max_duration_ms,throttles,max_concurrency,cold_start_observed
+run01,1,sustained,5,128,none,10,3001,86.27,95.7,144.89,0,3016,47.92,196,0,1,yes
