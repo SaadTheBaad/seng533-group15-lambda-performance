@@ -71,3 +71,22 @@ We record the following metrics for every run:
 - Apply reserved concurrency:
     - 10, 50, 100, 300
 - Compare against baseline (unreserved)
+
+## How to Run Tests
+**Sustained Tests:**
+
+```bash
+k6 run k6/sustained.js \
+-e BASE_URL=YOUR_API_URL \
+-e RATE=#number here \
+-e PREALLOCATED_VUS=#number here \
+-e MAX_VUS=#number here \
+--summary-export=results/raw_k6/run#_rep#_sustained_#rps_#mb_reserved#.json
+```
+**Burst Tests:**
+
+```bash
+k6 run k6/burst.js \
+-e BASE_URL=YOUR_API_URL\
+--summary-export=results/raw_k6/run#_rep#_burst_#mb_unreserved.json
+```
