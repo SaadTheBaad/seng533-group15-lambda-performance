@@ -7,7 +7,7 @@
 
 ## Abstract
 
-Serverless platforms promise elastic scaling and reduced operational burden, but their performance under realistic workloads remains difficult to reason about. This report evaluates an AWS Lambda-based HTTP API deployed behind Amazon API Gateway and observed through Amazon CloudWatch. The study focuses on four practical questions: how arrival rate affects latency and concurrency, how effectively Lambda autoscaling sustains throughput, how memory allocation changes function execution time versus end-to-end response time, and how reserved concurrency limits and bursty traffic alter behavior. We analyze 14 experimental configurations and 42 total runs, using three repetitions per configuration and reporting descriptive 95% confidence intervals based on Student's t-distribution with two degrees of freedom. The results show that Lambda sustained offered load closely up to 200 requests/s without throughput collapse, while tail latency increased from 92.91 +/- 6.16 ms at 5 requests/s to 101.49 +/- 6.94 ms at 200 requests/s. Increasing memory from 128 MB to 1024 MB reduced mean Lambda execution time from 4.07 +/- 0.27 ms to 1.38 +/- 0.13 ms, but average end-to-end latency changed only modestly. Reserved concurrency of 10 introduced throttling, whereas 50 or more eliminated it with little throughput change. Burst traffic exhibited worse latency and higher concurrency than a comparable sustained high-load case.
+Serverless platforms promise elastic scaling and reduced operational burden, but their performance under realistic workloads remains difficult to reason about. This report evaluates an AWS Lambda-based HTTP API deployed behind Amazon API Gateway and observed through Amazon CloudWatch. The study focuses on four practical questions: how arrival rate affects latency and concurrency, how effectively Lambda autoscaling sustains throughput, how memory allocation changes function execution time versus end-to-end response time, and how reserved concurrency limits and bursty traffic alter behavior. We analyze 14 experimental configurations and 42 total runs, using three repetitions per configuration and reporting descriptive 95% confidence intervals based on Student's t-distribution with two degrees of freedom. The results show that Lambda sustained offered load closely up to 200 requests/s without throughput collapse, while tail latency increased from 92.91 +/- 6.16 ms at 5 requests/s to 101.49 +/- 6.94 ms at 200 requests/s. Increasing memory from 128 MB to 1024 MB reduced mean Lambda execution time from 4.07 +/- 0.27 ms to 1.38 +/- 0.13 ms, but average end-to-end latency changed only modestly. Reserved concurrency of 10 introduced throttling, whereas 50 or more eliminated it with little throughput change. In the observed means, burst traffic showed slightly worse latency and higher concurrency than a comparable sustained high-load case.
 
 ## 1. Introduction
 
@@ -67,7 +67,7 @@ Table 1 summarizes the experiment matrix.
 
 ### 3.4 Experimental Setup and Analysis
 
-The Lambda service was deployed in a single fixed AWS region, and the load generator ran on a separate client machine, documented in the project reports as a MacBook Air M2. This separation is important because shared placement of load generator and service can distort observed results. Data collection combined k6 client-side summaries with CloudWatch monitoring outputs. The repository's `master_results.csv` was used as the source of record for analysis, and the `run11` workload typo (`sustaiined`) was normalized during processing.
+The Lambda service was deployed in a single fixed AWS region, and the load generator ran on a separate client machine, documented in the project reports as a MacBook Air M2. This separation is important because shared placement of load generator and service can distort observed results. For each configuration, the team applied the target memory and concurrency settings, executed the designated 10-minute k6 workload, exported the client-side summary, collected the corresponding CloudWatch metrics, and consolidated the results into the final dataset. The repository's `master_results.csv` was used as the source of record for analysis, and the `run11` workload typo (`sustaiined`) was normalized during processing.
 
 Statistical analysis is descriptive rather than inferential. For each configuration, the report uses the sample mean over three repetitions and a 95% confidence interval computed using Student's t-distribution with `df = 2` (`t = 4.303`). Because `n = 3` is small, confidence intervals are used to indicate variability rather than to support strong significance claims.
 
@@ -133,13 +133,13 @@ Figure 5 compares burst workloads at two memory settings, and Figure 6 compares 
 
 ### 4.4 Burst-Workload Behavior
 
-Burst traffic produced worse latency than sustained traffic at similar high load. At 128 MB, the burst workload yielded 89.77 +/- 2.28 ms average latency and 103.22 +/- 8.63 ms P95 latency, compared with 88.82 +/- 2.74 ms average latency and 101.49 +/- 6.94 ms P95 latency for the sustained 200 requests/s case. The burst workload also exhibited a higher mean maximum concurrency value (30.33 versus 24.67), which is consistent with the idea that rapid demand changes induce more aggressive environment creation.
+At similar high load, the burst workload showed slightly higher latency in the observed means than the sustained case. At 128 MB, the burst workload yielded 89.77 +/- 2.28 ms average latency and 103.22 +/- 8.63 ms P95 latency, compared with 88.82 +/- 2.74 ms average latency and 101.49 +/- 6.94 ms P95 latency for the sustained 200 requests/s case. The burst workload also exhibited a higher mean maximum concurrency value (30.33 versus 24.67), which is consistent with the idea that rapid demand changes induce more aggressive environment creation.
 
-Memory scaling helped more in the burst case than it did for sustained 100 requests/s. Moving from 128 MB to 512 MB reduced burst average latency from 89.77 +/- 2.28 ms to 85.32 +/- 2.14 ms and reduced burst P95 latency from 103.22 +/- 8.63 ms to 96.72 +/- 7.80 ms. Lambda average duration again dropped sharply, from 5.19 +/- 1.25 ms to 1.57 +/- 0.09 ms.
+In this dataset, memory scaling produced a clearer latency improvement in the burst case than in the steady 100 requests/s case. Moving from 128 MB to 512 MB reduced burst average latency from 89.77 +/- 2.28 ms to 85.32 +/- 2.14 ms and reduced burst P95 latency from 103.22 +/- 8.63 ms to 96.72 +/- 7.80 ms. Lambda average duration again dropped sharply, from 5.19 +/- 1.25 ms to 1.57 +/- 0.09 ms.
 
-These results suggest that memory headroom becomes more valuable when the platform is reacting to rapid traffic growth, not just steady-state demand. Still, the burst-versus-sustained comparison should be interpreted carefully because the offered loads are close but not identical (approximately 195 versus 200 requests/s), and the burst pattern introduces time-varying arrival behavior that is not captured by a single scalar rate.
+These results suggest that additional memory headroom may be more beneficial under the burst workload tested here than under the steady 100 requests/s configuration. Still, the burst-versus-sustained comparison should be interpreted carefully because the offered loads are close but not identical (approximately 195 versus 200 requests/s), and the burst pattern introduces time-varying arrival behavior that is not captured by a single scalar rate.
 
-**Takeaway.** Burst traffic imposed a modest but consistent penalty in tail latency and concurrency, and higher memory improved burst performance more clearly than it improved the steady 100 requests/s case.
+**Takeaway.** In the observed means, burst traffic showed somewhat worse tail latency and higher concurrency, and higher memory improved burst performance more clearly than it improved the steady 100 requests/s case.
 
 ### 4.5 Cold-Start Observations and Limitations
 
@@ -182,7 +182,6 @@ The main limitations of the study are the small number of repetitions per config
 
 [2] Amazon Web Services, "Configuring reserved concurrency for a function," AWS Lambda Developer Guide. [Online]. https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency
 
-
 [3] Amazon Web Services, "Lambda execution environment lifecycle," AWS Lambda Developer Guide. [Online]. https://docs.aws.amazon.com/lambda/latest/dg/runtimes-extensions-api
 
 [4] Amazon Web Services, "Configuring Lambda function memory," AWS Lambda Developer Guide. [Online]. https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory
@@ -198,4 +197,3 @@ Open Problems," in Research Advances in Cloud Computing, Singapore: Springer, 20
 [8] M. Shahrad, R. Fonseca, I. Goiri, G. I. Chaudhry, P. Batum, J. Cooke, E. Laureano, C. Tresness, M. Russinovich, and R. Bianchini, "Serverless in the Wild: Characterizing and Optimizing the Serverless Workload at a Large Cloud Provider," in 2020 USENIX Annual Technical Conference (USENIX ATC 20), 2020. [Online]. Available: https://www.usenix.org/conference/atc20/presentation/shahrad
 
 [9] J. M. Hellerstein, J. M. Faleiro, J. E. Gonzalez, J. Schleier-Smith, A. Sreekanti, A. Tumanov, and C. Wu, "Serverless Computing: One Step Forward, Two Steps Back," in Conference on Innovative Data Systems Research (CIDR), 2019. [Online]. Available: http://cidrdb.org/cidr2019/papers/p119-hellerstein-cidr19.pdf
-
