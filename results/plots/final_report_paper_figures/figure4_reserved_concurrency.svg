@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390">
+<style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #1f2937; }
+      .title { font-size: 17px; font-weight: 700; }
+      .axis-label { font-size: 12px; font-weight: 600; }
+      .tick { font-size: 10px; fill: #4b5563; }
+      .panel-title { font-size: 13px; font-weight: 700; }
+      .grid { stroke: #e5e7eb; stroke-width: 1; }
+      .axis { stroke: #6b7280; stroke-width: 1.2; }
+      .series { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .marker { stroke-width: 1.5; }
+      .raw-point { opacity: 0.65; }
+    </style>
+<text class="panel-title" x="206" y="34" text-anchor="middle">P95 Latency</text>
+<line class="grid" x1="76" y1="330.00" x2="378" y2="330.00" />
+<text class="tick" x="68" y="333.00" text-anchor="end">90</text>
+<line class="grid" x1="76" y1="258.50" x2="378" y2="258.50" />
+<text class="tick" x="68" y="261.50" text-anchor="end">95</text>
+<line class="grid" x1="76" y1="187.00" x2="378" y2="187.00" />
+<text class="tick" x="68" y="190.00" text-anchor="end">100</text>
+<line class="grid" x1="76" y1="115.50" x2="378" y2="115.50" />
+<text class="tick" x="68" y="118.50" text-anchor="end">105</text>
+<line class="grid" x1="76" y1="44.00" x2="378" y2="44.00" />
+<text class="tick" x="68" y="47.00" text-anchor="end">110</text>
+<line class="grid" x1="113.75" y1="44" x2="113.75" y2="330" />
+<text class="tick" x="113.75" y="346" text-anchor="middle">10</text>
+<line class="grid" x1="189.25" y1="44" x2="189.25" y2="330" />
+<text class="tick" x="189.25" y="346" text-anchor="middle">50</text>
+<line class="grid" x1="264.75" y1="44" x2="264.75" y2="330" />
+<text class="tick" x="264.75" y="346" text-anchor="middle">100</text>
+<line class="grid" x1="340.25" y1="44" x2="340.25" y2="330" />
+<text class="tick" x="340.25" y="346" text-anchor="middle">300</text>
+<line class="axis" x1="76" y1="330" x2="378" y2="330" />
+<line class="axis" x1="76" y1="44" x2="76" y2="330" />
+<path class="series" stroke="#2563eb" d="M 113.75 198.30 L 189.25 191.58 L 264.75 228.33 L 340.25 204.45" />
+<line x1="113.75" y1="189.15" x2="113.75" y2="207.45" stroke="#2563eb" stroke-width="1.4" />
+<line x1="108.75" y1="189.15" x2="118.75" y2="189.15" stroke="#2563eb" stroke-width="1.4" />
+<line x1="108.75" y1="207.45" x2="118.75" y2="207.45" stroke="#2563eb" stroke-width="1.4" />
+<line x1="189.25" y1="95.77" x2="189.25" y2="287.39" stroke="#2563eb" stroke-width="1.4" />
+<line x1="184.25" y1="95.77" x2="194.25" y2="95.77" stroke="#2563eb" stroke-width="1.4" />
+<line x1="184.25" y1="287.39" x2="194.25" y2="287.39" stroke="#2563eb" stroke-width="1.4" />
+<line x1="264.75" y1="189.43" x2="264.75" y2="267.22" stroke="#2563eb" stroke-width="1.4" />
+<line x1="259.75" y1="189.43" x2="269.75" y2="189.43" stroke="#2563eb" stroke-width="1.4" />
+<line x1="259.75" y1="267.22" x2="269.75" y2="267.22" stroke="#2563eb" stroke-width="1.4" />
+<line x1="340.25" y1="125.08" x2="340.25" y2="283.81" stroke="#2563eb" stroke-width="1.4" />
+<line x1="335.25" y1="125.08" x2="345.25" y2="125.08" stroke="#2563eb" stroke-width="1.4" />
+<line x1="335.25" y1="283.81" x2="345.25" y2="283.81" stroke="#2563eb" stroke-width="1.4" />
+<circle class="marker" cx="113.75" cy="198.30" r="4.2" fill="#ffffff" stroke="#2563eb" />
+<circle class="marker" cx="189.25" cy="191.58" r="4.2" fill="#ffffff" stroke="#2563eb" />
+<circle class="marker" cx="264.75" cy="228.33" r="4.2" fill="#ffffff" stroke="#2563eb" />
+<circle class="marker" cx="340.25" cy="204.45" r="4.2" fill="#ffffff" stroke="#2563eb" />
+<text class="axis-label" x="227" y="366" text-anchor="middle">Reserved Concurrency</text>
+<text class="axis-label" transform="translate(34, 187) rotate(-90)" text-anchor="middle">P95 Latency (ms)</text>
+<text class="panel-title" x="600" y="34" text-anchor="middle">Throttles</text>
+<line class="grid" x1="470" y1="330.00" x2="772" y2="330.00" />
+<text class="tick" x="462" y="333.00" text-anchor="end">0</text>
+<line class="grid" x1="470" y1="187.00" x2="772" y2="187.00" />
+<text class="tick" x="462" y="190.00" text-anchor="end">50</text>
+<line class="grid" x1="470" y1="44.00" x2="772" y2="44.00" />
+<text class="tick" x="462" y="47.00" text-anchor="end">100</text>
+<line class="grid" x1="507.75" y1="44" x2="507.75" y2="330" />
+<text class="tick" x="507.75" y="346" text-anchor="middle">10</text>
+<line class="grid" x1="583.25" y1="44" x2="583.25" y2="330" />
+<text class="tick" x="583.25" y="346" text-anchor="middle">50</text>
+<line class="grid" x1="658.75" y1="44" x2="658.75" y2="330" />
+<text class="tick" x="658.75" y="346" text-anchor="middle">100</text>
+<line class="grid" x1="734.25" y1="44" x2="734.25" y2="330" />
+<text class="tick" x="734.25" y="346" text-anchor="middle">300</text>
+<line class="axis" x1="470" y1="330" x2="772" y2="330" />
+<line class="axis" x1="470" y1="44" x2="470" y2="330" />
+<path class="series" stroke="#ea580c" d="M 507.75 277.58 L 583.25 330.00 L 658.75 330.00 L 734.25 330.00" />
+<circle class="raw-point" cx="499.75" cy="181.28" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="507.75" cy="330.00" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="515.75" cy="321.42" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="575.25" cy="330.00" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="583.25" cy="330.00" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="591.25" cy="330.00" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="650.75" cy="330.00" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="658.75" cy="330.00" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="666.75" cy="330.00" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="726.25" cy="330.00" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="734.25" cy="330.00" r="3.6" fill="#ea580c" />
+<circle class="raw-point" cx="742.25" cy="330.00" r="3.6" fill="#ea580c" />
+<line x1="507.75" y1="70.17" x2="507.75" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="502.75" y1="70.17" x2="512.75" y2="70.17" stroke="#ea580c" stroke-width="1.4" />
+<line x1="502.75" y1="330.00" x2="512.75" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="583.25" y1="330.00" x2="583.25" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="578.25" y1="330.00" x2="588.25" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="578.25" y1="330.00" x2="588.25" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="658.75" y1="330.00" x2="658.75" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="653.75" y1="330.00" x2="663.75" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="653.75" y1="330.00" x2="663.75" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="734.25" y1="330.00" x2="734.25" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="729.25" y1="330.00" x2="739.25" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<line x1="729.25" y1="330.00" x2="739.25" y2="330.00" stroke="#ea580c" stroke-width="1.4" />
+<circle class="marker" cx="507.75" cy="277.58" r="4.2" fill="#ffffff" stroke="#ea580c" />
+<circle class="marker" cx="583.25" cy="330.00" r="4.2" fill="#ffffff" stroke="#ea580c" />
+<circle class="marker" cx="658.75" cy="330.00" r="4.2" fill="#ffffff" stroke="#ea580c" />
+<circle class="marker" cx="734.25" cy="330.00" r="4.2" fill="#ffffff" stroke="#ea580c" />
+<text class="axis-label" x="621" y="366" text-anchor="middle">Reserved Concurrency</text>
+<text class="axis-label" transform="translate(428, 187) rotate(-90)" text-anchor="middle">Throttles</text>
+<text class="panel-title" x="994" y="34" text-anchor="middle">Max Concurrent Executions</text>
+<line class="grid" x1="864" y1="330.00" x2="1166" y2="330.00" />
+<text class="tick" x="856" y="333.00" text-anchor="end">0</text>
+<line class="grid" x1="864" y1="234.67" x2="1166" y2="234.67" />
+<text class="tick" x="856" y="237.67" text-anchor="end">10</text>
+<line class="grid" x1="864" y1="139.33" x2="1166" y2="139.33" />
+<text class="tick" x="856" y="142.33" text-anchor="end">20</text>
+<line class="grid" x1="864" y1="44.00" x2="1166" y2="44.00" />
+<text class="tick" x="856" y="47.00" text-anchor="end">30</text>
+<line class="grid" x1="901.75" y1="44" x2="901.75" y2="330" />
+<text class="tick" x="901.75" y="346" text-anchor="middle">10</text>
+<line class="grid" x1="977.25" y1="44" x2="977.25" y2="330" />
+<text class="tick" x="977.25" y="346" text-anchor="middle">50</text>
+<line class="grid" x1="1052.75" y1="44" x2="1052.75" y2="330" />
+<text class="tick" x="1052.75" y="346" text-anchor="middle">100</text>
+<line class="grid" x1="1128.25" y1="44" x2="1128.25" y2="330" />
+<text class="tick" x="1128.25" y="346" text-anchor="middle">300</text>
+<line class="axis" x1="864" y1="330" x2="1166" y2="330" />
+<line class="axis" x1="864" y1="44" x2="864" y2="330" />
+<path class="series" stroke="#059669" d="M 901.75 241.05 L 977.25 209.21 L 1052.75 148.87 L 1128.25 202.92" />
+<circle class="marker" cx="901.75" cy="241.05" r="4.2" fill="#ffffff" stroke="#059669" />
+<circle class="marker" cx="977.25" cy="209.21" r="4.2" fill="#ffffff" stroke="#059669" />
+<circle class="marker" cx="1052.75" cy="148.87" r="4.2" fill="#ffffff" stroke="#059669" />
+<circle class="marker" cx="1128.25" cy="202.92" r="4.2" fill="#ffffff" stroke="#059669" />
+<text class="axis-label" x="1015" y="366" text-anchor="middle">Reserved Concurrency</text>
+<text class="axis-label" transform="translate(822, 187) rotate(-90)" text-anchor="middle">Concurrent Executions</text>
+</svg>

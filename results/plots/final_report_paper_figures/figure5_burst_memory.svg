@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390">
+<style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #1f2937; }
+      .title { font-size: 17px; font-weight: 700; }
+      .axis-label { font-size: 12px; font-weight: 600; }
+      .tick { font-size: 10px; fill: #4b5563; }
+      .panel-title { font-size: 13px; font-weight: 700; }
+      .grid { stroke: #e5e7eb; stroke-width: 1; }
+      .axis { stroke: #6b7280; stroke-width: 1.2; }
+      .series { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .marker { stroke-width: 1.5; }
+      .raw-point { opacity: 0.65; }
+    </style>
+<text class="panel-title" x="206" y="34" text-anchor="middle">Average Latency</text>
+<line class="grid" x1="76" y1="330.00" x2="378" y2="330.00" />
+<text class="tick" x="68" y="333.00" text-anchor="end">80</text>
+<line class="grid" x1="76" y1="234.67" x2="378" y2="234.67" />
+<text class="tick" x="68" y="237.67" text-anchor="end">85</text>
+<line class="grid" x1="76" y1="139.33" x2="378" y2="139.33" />
+<text class="tick" x="68" y="142.33" text-anchor="end">90</text>
+<line class="grid" x1="76" y1="44.00" x2="378" y2="44.00" />
+<text class="tick" x="68" y="47.00" text-anchor="end">95</text>
+<line class="grid" x1="151.50" y1="44" x2="151.50" y2="330" />
+<text class="tick" x="151.50" y="346" text-anchor="middle">128</text>
+<line class="grid" x1="302.50" y1="44" x2="302.50" y2="330" />
+<text class="tick" x="302.50" y="346" text-anchor="middle">512</text>
+<line class="axis" x1="76" y1="330" x2="378" y2="330" />
+<line class="axis" x1="76" y1="44" x2="76" y2="330" />
+<path class="series" stroke="#2563eb" d="M 151.50 143.72 L 302.50 228.57" />
+<line x1="151.50" y1="100.25" x2="151.50" y2="187.19" stroke="#2563eb" stroke-width="1.4" />
+<line x1="146.50" y1="100.25" x2="156.50" y2="100.25" stroke="#2563eb" stroke-width="1.4" />
+<line x1="146.50" y1="187.19" x2="156.50" y2="187.19" stroke="#2563eb" stroke-width="1.4" />
+<line x1="302.50" y1="187.76" x2="302.50" y2="269.37" stroke="#2563eb" stroke-width="1.4" />
+<line x1="297.50" y1="187.76" x2="307.50" y2="187.76" stroke="#2563eb" stroke-width="1.4" />
+<line x1="297.50" y1="269.37" x2="307.50" y2="269.37" stroke="#2563eb" stroke-width="1.4" />
+<circle class="marker" cx="151.50" cy="143.72" r="4.2" fill="#ffffff" stroke="#2563eb" />
+<circle class="marker" cx="302.50" cy="228.57" r="4.2" fill="#ffffff" stroke="#2563eb" />
+<text class="axis-label" x="227" y="366" text-anchor="middle">Memory (MB)</text>
+<text class="axis-label" transform="translate(34, 187) rotate(-90)" text-anchor="middle">Average Latency (ms)</text>
+<text class="panel-title" x="600" y="34" text-anchor="middle">P95 Latency</text>
+<line class="grid" x1="470" y1="330.00" x2="772" y2="330.00" />
+<text class="tick" x="462" y="333.00" text-anchor="end">80</text>
+<line class="grid" x1="470" y1="258.50" x2="772" y2="258.50" />
+<text class="tick" x="462" y="261.50" text-anchor="end">90</text>
+<line class="grid" x1="470" y1="187.00" x2="772" y2="187.00" />
+<text class="tick" x="462" y="190.00" text-anchor="end">100</text>
+<line class="grid" x1="470" y1="115.50" x2="772" y2="115.50" />
+<text class="tick" x="462" y="118.50" text-anchor="end">110</text>
+<line class="grid" x1="470" y1="44.00" x2="772" y2="44.00" />
+<text class="tick" x="462" y="47.00" text-anchor="end">120</text>
+<line class="grid" x1="545.50" y1="44" x2="545.50" y2="330" />
+<text class="tick" x="545.50" y="346" text-anchor="middle">128</text>
+<line class="grid" x1="696.50" y1="44" x2="696.50" y2="330" />
+<text class="tick" x="696.50" y="346" text-anchor="middle">512</text>
+<line class="axis" x1="470" y1="330" x2="772" y2="330" />
+<line class="axis" x1="470" y1="44" x2="470" y2="330" />
+<path class="series" stroke="#ea580c" d="M 545.50 163.98 L 696.50 210.45" />
+<line x1="545.50" y1="102.27" x2="545.50" y2="225.68" stroke="#ea580c" stroke-width="1.4" />
+<line x1="540.50" y1="102.27" x2="550.50" y2="102.27" stroke="#ea580c" stroke-width="1.4" />
+<line x1="540.50" y1="225.68" x2="550.50" y2="225.68" stroke="#ea580c" stroke-width="1.4" />
+<line x1="696.50" y1="154.68" x2="696.50" y2="266.22" stroke="#ea580c" stroke-width="1.4" />
+<line x1="691.50" y1="154.68" x2="701.50" y2="154.68" stroke="#ea580c" stroke-width="1.4" />
+<line x1="691.50" y1="266.22" x2="701.50" y2="266.22" stroke="#ea580c" stroke-width="1.4" />
+<circle class="marker" cx="545.50" cy="163.98" r="4.2" fill="#ffffff" stroke="#ea580c" />
+<circle class="marker" cx="696.50" cy="210.45" r="4.2" fill="#ffffff" stroke="#ea580c" />
+<text class="axis-label" x="621" y="366" text-anchor="middle">Memory (MB)</text>
+<text class="axis-label" transform="translate(428, 187) rotate(-90)" text-anchor="middle">P95 Latency (ms)</text>
+<text class="panel-title" x="994" y="34" text-anchor="middle">Max Concurrent Executions</text>
+<line class="grid" x1="864" y1="330.00" x2="1166" y2="330.00" />
+<text class="tick" x="856" y="333.00" text-anchor="end">0</text>
+<line class="grid" x1="864" y1="234.67" x2="1166" y2="234.67" />
+<text class="tick" x="856" y="237.67" text-anchor="end">20</text>
+<line class="grid" x1="864" y1="139.33" x2="1166" y2="139.33" />
+<text class="tick" x="856" y="142.33" text-anchor="end">40</text>
+<line class="grid" x1="864" y1="44.00" x2="1166" y2="44.00" />
+<text class="tick" x="856" y="47.00" text-anchor="end">60</text>
+<line class="grid" x1="939.50" y1="44" x2="939.50" y2="330" />
+<text class="tick" x="939.50" y="346" text-anchor="middle">128</text>
+<line class="grid" x1="1090.50" y1="44" x2="1090.50" y2="330" />
+<text class="tick" x="1090.50" y="346" text-anchor="middle">512</text>
+<line class="axis" x1="864" y1="330" x2="1166" y2="330" />
+<line class="axis" x1="864" y1="44" x2="864" y2="330" />
+<path class="series" stroke="#059669" d="M 939.50 185.43 L 1090.50 193.34" />
+<line x1="939.50" y1="66.83" x2="939.50" y2="304.02" stroke="#059669" stroke-width="1.4" />
+<line x1="934.50" y1="66.83" x2="944.50" y2="66.83" stroke="#059669" stroke-width="1.4" />
+<line x1="934.50" y1="304.02" x2="944.50" y2="304.02" stroke="#059669" stroke-width="1.4" />
+<line x1="1090.50" y1="85.90" x2="1090.50" y2="300.78" stroke="#059669" stroke-width="1.4" />
+<line x1="1085.50" y1="85.90" x2="1095.50" y2="85.90" stroke="#059669" stroke-width="1.4" />
+<line x1="1085.50" y1="300.78" x2="1095.50" y2="300.78" stroke="#059669" stroke-width="1.4" />
+<circle class="marker" cx="939.50" cy="185.43" r="4.2" fill="#ffffff" stroke="#059669" />
+<circle class="marker" cx="1090.50" cy="193.34" r="4.2" fill="#ffffff" stroke="#059669" />
+<text class="axis-label" x="1015" y="366" text-anchor="middle">Memory (MB)</text>
+<text class="axis-label" transform="translate(822, 187) rotate(-90)" text-anchor="middle">Concurrent Executions</text>
+</svg>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+<style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #1f2937; }
+      .title { font-size: 17px; font-weight: 700; }
+      .axis-label { font-size: 12px; font-weight: 600; }
+      .tick { font-size: 10px; fill: #4b5563; }
+      .panel-title { font-size: 13px; font-weight: 700; }
+      .grid { stroke: #e5e7eb; stroke-width: 1; }
+      .axis { stroke: #6b7280; stroke-width: 1.2; }
+      .series { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .marker { stroke-width: 1.5; }
+      .raw-point { opacity: 0.65; }
+    </style>
+<defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280" />
+      </marker>
+    </defs>
+<style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #1f2937; }
+      .label { font-size: 15px; font-weight: 700; }
+      .sub { font-size: 12px; fill: #374151; }
+      .edge { stroke: #6b7280; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .box { rx: 16; ry: 16; stroke-width: 2; }
+    </style>
+<rect class="box" x="50" y="120" width="220" height="90" fill="#dbeafe" stroke="#2563eb" />
+<text class="label" x="160" y="155" text-anchor="middle">k6 Load Generator</text>
+<text class="sub" x="160" y="178" text-anchor="middle">Separate client machine</text>
+<text class="sub" x="160" y="198" text-anchor="middle">Sustained and burst workloads</text>
+<rect class="box" x="340" y="120" width="220" height="90" fill="#e0f2fe" stroke="#0284c7" />
+<text class="label" x="450" y="155" text-anchor="middle">Amazon API Gateway</text>
+<text class="sub" x="450" y="178" text-anchor="middle">HTTP ingress</text>
+<text class="sub" x="450" y="198" text-anchor="middle">Routes requests to Lambda</text>
+<rect class="box" x="630" y="120" width="240" height="90" fill="#dcfce7" stroke="#16a34a" />
+<text class="label" x="750" y="155" text-anchor="middle">AWS Lambda Function</text>
+<text class="sub" x="750" y="178" text-anchor="middle">Node.js handler</text>
+<text class="sub" x="750" y="198" text-anchor="middle">JSON parsing + lightweight compute</text>
+<rect class="box" x="940" y="45" width="210" height="90" fill="#fef3c7" stroke="#d97706" />
+<text class="label" x="1045" y="80" text-anchor="middle">Amazon CloudWatch</text>
+<text class="sub" x="1045" y="103" text-anchor="middle">Invocations, duration,</text>
+<text class="sub" x="1045" y="123" text-anchor="middle">concurrency, throttles</text>
+<rect class="box" x="940" y="225" width="210" height="70" fill="#f3e8ff" stroke="#9333ea" />
+<text class="label" x="1045" y="258" text-anchor="middle">HTTP Response</text>
+<text class="sub" x="1045" y="280" text-anchor="middle">Returned to the client</text>
+<path class="edge" d="M 270 165 L 340 165" />
+<path class="edge" d="M 560 165 L 630 165" />
+<path class="edge" d="M 870 165 L 940 165 L 940 260" />
+<path class="edge" d="M 870 150 L 940 150 L 940 90" />
+<text class="sub" x="595" y="145" text-anchor="middle">Request flow</text>
+<text class="sub" x="920" y="73" text-anchor="end">Metrics</text>
+<text class="sub" x="920" y="244" text-anchor="end">Result</text>
+</svg>
